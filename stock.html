@@ -1,0 +1,52 @@
+<!-- an html form that allows user to enter stock data and returns a grand total -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Interest</title>
+</head>
+	<body>
+		<form name="stockdata">
+			<table>
+				<tr>
+					<td colspan="3"><big><b>Enter Stock Information</b></big></td></tr>
+				<tr>
+					
+					<td>Price value of the stock:</td>
+					<td><input type="text" name="stockprice" size="12" onchange="calculate()"></td>
+				</tr>
+				<tr>					
+					<td>Number of shares purchasing:</td>
+					<td><input type="text" name="shares" size="12" onchange="calculate()"></td>
+				</tr>
+				<tr>
+					<td colspan="3"><big><b>
+						<input type="button" value="Purchase" onclick="calculate()">
+						<br><br>
+						Stock Cost Information				
+					</b></big></td></tr>	
+				<tr>				
+				<tr>					
+					<td>Your total cost will be:</td>
+					<td><input type="text" name="totalcost" size="12"></td>
+				</tr>
+
+			</table>
+		</form>
+	</body>
+</html>
+
+<script type="text/javascript" language="javascript">
+	function calculate(){
+		var stockprice 	= document.stockdata.stockprice.value;
+		var shares 		= document.stockdata.shares.value;
+		
+		if(!isNaN(stockprice) && (stockprice != Number.POSITIVE_INFINITY) && (stockprice != Number.NEGATIVE_INFINITY)){
+			
+			document.stockdata.totalcost.value = stockprice * shares; 
+		}
+		else{
+			document.stockdata.totalcost.value 	  = "NaN";
+		}
+	}
+</script>
