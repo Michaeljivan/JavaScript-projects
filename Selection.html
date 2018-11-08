@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<script type="text/javascript">
+	function f1(){
+		var radio01 = document.getElementById("r1");
+		var radio02 = document.getElementById("r2");
+
+		if(radio01.checked == true){
+			alert("Your selection " + radio01.value);
+		}else if(radio02.checked == true){
+			alert("Your selection " + radio02.value);
+		}
+	}
+</script>
+<body>
+	<label>Gender</label><br>
+	<label><input id="r1" type="radio" name="selection" value="Male" /> Male </label>
+	<br>
+	<label><input id="r2" type="radio" name="selection" value="Female" /> Female </label>
+
+	<button onclick="f1()">Make Selection</button>
+</body>
+</html>
