@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<script type="text/javascript">
+	function select(){
+		var dropdown = document.getElementById("selectbox");
+		
+		// Make use of the options and selectedIndex property
+		alert("You have selected " + dropdown.options[dropdown.selectedIndex].value );
+	}
+</script>
+<body>
+	<select id="selectbox">
+		<option value="">-</option>
+		<option value="Humans">Humans</option>
+		<option value="Aliens">Aliens</option>
+		<option value="Other">Other</option>
+	</select>
+	<button onclick="select()">Select</button>
+
+</body>
+</html>
