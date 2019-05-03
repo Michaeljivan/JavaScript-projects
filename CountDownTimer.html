@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Count</title>
+</head>
+<body>
+	<!-- Counting Down From:  -->
+	<p id="time"></p>
+
+	Counting Down To: 
+	<p id="time2"></p>
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+var x = setInterval(function (){
+
+	// Get time start 
+	var date_now = new Date().getTime();
+
+	// Get time finish
+	var date_move = new Date('May 15, 2019 03:00:00');
+	
+	// Destination
+	document.getElementById("time2").innerHTML = date_move;
+
+	// Get distance between date
+	var distance = date_move - date_now;
+
+	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	var hours = Math.floor(distance % (1000 * 60 * 60 *24) /(1000 * 60 * 60));
+	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+	// Print Count Down onto screen
+	document.getElementById("time").innerHTML = days + " Days, "+ hours + " Hours, "+ minutes + " Minutes, " + seconds + " Seconds";
+
+	// END timer
+	if(distance < 0 )
+	{
+		clearInterval(x);
+		document.getElementById("time").innerHTML = "TIME HAS EXPIRED";
+	}
+
+}, 1000);
+
+
+
+</script>
+
+<style type="text/css">
+	#time{
+		font-family: Arial;
+	}
+</style>
