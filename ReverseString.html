@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Java</title>
+</head>
+<body>
+	<input type="text" id="txt" name="txt" style="width: 100px; height: 30px;">
+	<br>
+	<button onclick="reverseString()" style="width: 100px;">Reverse!</button>	
+	<br>
+	<p id="print"></p>
+</body>
+</html>
+<script type="text/javascript">
+	function reverseString(){
+		var text = document.getElementById("txt").value;
+		console.log(text);
+		document.getElementById("print").innerHTML = text.split("").reverse().join("");
+	}
+</script>
